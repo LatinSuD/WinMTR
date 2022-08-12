@@ -1077,6 +1077,7 @@ void WinMTRDialog::Transit(STATES new_state)
 		state = STOPPING;
 		break;
 	case EXIT:
+		exit(0);
 		switch(state) {
 		case IDLE:
 			transition = IDLE_TO_EXIT;
