@@ -25,13 +25,13 @@ this should improve performance and reduces network load* <br>
 ([32bit](http://microsoft.com/en-us/download/details.aspx?id=5555) |
 [64bit](http://microsoft.com/en-us/download/details.aspx?id=14632)) or use static build
 
-### About me / why I decided to create this fork
+### About me (White-Tiger) / why I decided to create this fork
 There isn't that much to say actually, I've been using IPv6 for a few years now thanks to [**SixXS**](http://sixxs.net/)
 and it always annoyed me that WinMTR couldn't handle IPv6... finally my ISP got some sort of IPv6 beta test.
 And that's what I wanted to compare: native vs SixXS with long-term trace routes such as those WinMTR provides. <br>
 Since there wasn't any WinMTR build with IPv6, I decided to do it myself ;) The result can be seen here :P <br>
 *(after 1 day for IPv6, and 2 additional days to fix other stuff and polishing)*
 
-**If you're looking for an alternative** *(not meant for long-term traces)* there's [**vTrace**](http://vtrace.pl).
-It's some really interesting piece of Software ;) *(with more then just trace routes)*
+### About me (LatinSuD) / why I decided to create this fork
+This is probably a temporary fork in order to create a few enhancements. We already have too many forks.
 ~~~~
