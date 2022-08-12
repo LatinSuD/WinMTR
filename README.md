@@ -34,4 +34,11 @@ Since there wasn't any WinMTR build with IPv6, I decided to do it myself ;) The 
 
 ### About me (LatinSuD) / why I decided to create this fork
 This is probably a temporary fork in order to create a few enhancements. We already have too many forks.
+
+### How to compile
+1. Download and install Visual Studio Community 2022
+2. Install workload "Desktop developtment with C++", with optional package "C++ MFC for the latest v143..." (other versions may work too).
+3. Open WinMTR.vcxproj
+4. Build and run
+
 ~~~~
