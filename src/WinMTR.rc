@@ -278,7 +278,7 @@ END
 STRINGTABLE
 BEGIN
     IDP_SOCKETS_INIT_FAILED "Windows sockets initialization failed."
-    IDS_STRING_SB_NAME      "WinMTR v1.00 GPLv2 (original by Appnor MSP - Fully Managed Hosting & Cloud Provider)"
+    IDS_STRING_SB_NAME      "WinMTR v1.00 GPLv2"
     IDS_STRING_SB_PING      "0000000"
     IDS_STRING_CLEAR_HISTORY "Clear History"
 END
