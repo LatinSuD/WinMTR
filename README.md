@@ -4,7 +4,7 @@ WinMTR (Redux)
 with IPv6 support and other different enhancements and bug fixes
 
 ### Download (binaries)
-* [**view all available**](https://github.com/White-Tiger/WinMTR/releases)
+* [**view all available**](https://github.com/LatinSuD/WinMTR/releases)
 
 #### Differences to [WinMTR](http://winmtr.net/) 0.98
 - `[x]` - removed Windows 2000 support <br>
