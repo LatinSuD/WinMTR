@@ -604,8 +604,8 @@ void string_pad(char* dest, char *template1, char* template2, int desired_len, c
 //*****************************************************************************
 void WinMTRDialog::OnCTTC()
 {
-	char buf[255], t_buf[1000], t_buf2[1000], f_buf[255 * 100];
-	
+	char hostnameip[1000], buf[255], t_buf[1000], t_buf2[1000], f_buf[255 * 100];
+
 	int nh = wmtrnet->GetMax();
 
 	int longest; // longest dns name
@@ -616,10 +616,33 @@ void WinMTRDialog::OnCTTC()
 			longest = strlen(buf);
 	}
 	int pad = longest + 56;
+
 	
+	// Resolve
+	m_comboHost.GetWindowText(buf, 255);
+	struct sockaddr_in sa2;
+	sa2.sin_family = AF_INET;
+	sa2.sin_addr = wmtrnet->last_remote_addr;
+	if (getnameinfo((sockaddr *)&sa2, sizeof(sockaddr_in6), t_buf, 255, NULL, 0, NI_NUMERICHOST)) {
+		t_buf[0] = '\0';
+	}
+	if (strlen(t_buf) >0 && strcmp(buf, t_buf) != 0) {
+		sprintf(hostnameip, "%s (%s) ", buf, t_buf);
+	}
+	else {
+		sprintf(hostnameip, "%s ", buf);
+	}
+	if (strlen(hostnameip) + 46 > pad) // Recalculate pad for the "Trace to:" line
+		pad = strlen(hostnameip) + 46; 
+
+
 	string_pad(f_buf, "|-", "--------------------------------------------------|\r\n", pad, '-');
-	string_pad(t_buf, "| ", "           WinMTR statistics                      |\r\n", pad, ' ');
+
+	sprintf(t_buf2, "| Trace to:  %s", hostnameip);
+	string_pad(t_buf, t_buf2, "   WinMTR statistics         |\r\n", pad, ' ');
 	strcat(f_buf, t_buf);
+
+
 	string_pad(t_buf, "| ", " Host -   %  | Sent | Recv | Best | Avrg | Wrst | Last |\r\n", pad, ' ');
 	strcat(f_buf, t_buf);
 	string_pad(t_buf, "|-", "--------|------|------|------|------|------|------|\r\n", pad, '-');
